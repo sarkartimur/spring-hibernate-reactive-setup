@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.8'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'io.freefair.lombok' version '6.6.1'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '11'
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation (
+            'org.springframework.boot:spring-boot-starter-webflux',
+
+            'org.springframework.boot:spring-boot-starter-data-jpa',
+            'org.hibernate.reactive:hibernate-reactive-core:1.1.9.Final',
+            'io.vertx:vertx-pg-client:4.3.7',
+            'com.ongres.scram:client:2.1'
+    )
+}
